@@ -270,9 +270,9 @@ const Home= ()=>{
       end: "bottom bottom",
       snap: {
         snapTo: 1 / (sections.length - 1), // Snap to each section
-        duration: { min: 0.1, max: 0.4 },  // Snap animation duration
-                                // Delay before snapping
-        ease: "power1.inOut"               // Easing function
+        duration: 0.3,  // Snap animation duration
+        delay: 0,       // Delay before snapping
+        ease: "power2.inOut"               // Easing function
       },
       scrub: 1,
       // markers: true, // Uncomment to debug
