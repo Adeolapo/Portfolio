@@ -7,6 +7,7 @@ import Body from './pages/body/Body.jsx'
 import About from './pages/about/About.jsx'
 import Dynamic from './pages/dynamic/Dynamic.jsx'
 import Frontend from './pages/frontend/Frontend.jsx'
+import Backend from './pages/backend/Backend.jsx'
 
 createRoot(document.getElementById('root')!).render(
 
@@ -20,7 +21,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/about" element={<About />} />
         <Route path="/ui_ux" element={<Dynamic />} />
         <Route path="/frontend" element={<Frontend />} />
-        
+        <Route path="/backend" element={<Backend />} />
 
       </Routes>
     </BrowserRouter>,

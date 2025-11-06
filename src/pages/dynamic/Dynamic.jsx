@@ -9,6 +9,7 @@ import cover6 from '../../assets/cover/cover6.png'
 import cover7 from '../../assets/cover/cover7.png'
 import './dynamic.css'
 import { useNavigate } from 'react-router-dom';
+import Star from '@/component/background/Star';
 
 const Dynamic = () => {
 
@@ -38,7 +39,7 @@ const Dynamic = () => {
     const projects = [
         {
             
-            title: "Project One",
+            title: "VertAI",
             description: "Description for project one.",
             imageUrl: cover1,
             view:"www.behance.net/gallery/227966759/VertAI",
@@ -46,7 +47,7 @@ const Dynamic = () => {
         },
         {
             
-            title: "Project Two",
+            title: "Verty NFT Marketplace",
             description: "Description for project one.",
             imageUrl: cover2,
             view:"www.behance.net/gallery/231313655/Verty-NFT-Marketplace",
@@ -54,14 +55,14 @@ const Dynamic = () => {
         },
         {
             
-            title: "Project Three",
+            title: "Gym Website Landing Page",
             description: "Description for project one.",
             imageUrl: cover3,
             view:"www.behance.net/gallery/218705745/Gym-website-landing-page",
         },
         {
             
-            title: "Project Three",
+            title: "Retro Crocs E-commerce",
             description: "Description for project one.",
             imageUrl: cover4,
             view:"www.behance.net/gallery/220992183/Crocs-e-commerce-web-and-mobile-design",
@@ -69,7 +70,7 @@ const Dynamic = () => {
         },
         {
             
-            title: "Project Three",
+            title: "VertWallet Fintech App",
             description: "Description for project one.",
             imageUrl: cover5,
             view:"www.behance.net/gallery/227132131/VertWallet-Fintech-App",
@@ -78,7 +79,7 @@ const Dynamic = () => {
         
         {
             
-            title: "Project Three",
+            title: "Real Estate Landing Page",
             description: "Description for project one.",
             imageUrl: cover6,
             view:"www.behance.net/gallery/234692779/Real-Estate-Landing-Page",
@@ -86,7 +87,7 @@ const Dynamic = () => {
         },
         {
             
-            title: "Project Three",
+            title: "Furnicho UI Design",
             description: "Description for project one.",
             imageUrl: cover7,
             view:"www.behance.net/gallery/217731639/Furnicho-UI-design",
@@ -111,6 +112,7 @@ const Dynamic = () => {
 
   return (
     <div className='p-8 text-left space-y-4  '>
+        <Star />
         <button onClick={goBack} className='mb-5 cursor-pointer  md:w-12 md:h-12 w-10 h-10 rounded-lg  bg-white  flex items-center justify-center  transition-all transform hover:scale-110 hover:bg-[#31E1F7] sticky top-[20px]'>
             <i className="fa-solid fa-angle-left z-10 text-black md:text-[24px] text-[20px] "></i>
         </button>
@@ -132,6 +134,7 @@ const Dynamic = () => {
 
         {projects.map((project,index) => (
             console.log(project.imageUrl),
+            <div>
             <div
             key={index}
             style={{ backgroundImage: `url(${project.imageUrl})`,height: `${height[index]}px` }}
@@ -142,7 +145,7 @@ const Dynamic = () => {
                     
                 </h2>
                 <p className="text-gray-200"></p>
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 opacity-0 group-hover:opacity-100 transition-opacity w-full h-full duration-300 flex items-center justify-center">
+                <div className={`absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 opacity-0 group-hover:opacity-100 transition-opacity w-full h-full duration-300 flex items-center justify-center opacity-100 md:opacity-0`}>
                     <div>
                         <a href={`https://${project.view}`} target="_blank" rel="noopener noreferrer">
                         <div className='rounded-full bg-white md:w-[50px] md:h-[50px] h-[30px] w-[30px] flex items-center justify-center text-gray-700 hover:scale-125 transition-transform duration-300'>
@@ -152,6 +155,8 @@ const Dynamic = () => {
                         
                     </div>
                 </div>
+            </div>
+            <h2 className="text-[12px] md:text-md font-semibold text-white">{project.title}</h2>
             </div>
         ))}
     </Masonry>

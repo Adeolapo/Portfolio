@@ -517,7 +517,7 @@ console.log(skills[currentSkillIndex][1].title)
 
                 
                 <button type="button" className="btn hero-buttons  text-center flex justify-center">
-                <strong>Get Started</strong>
+                <strong>Contact Me</strong>
                 <div id="container-stars">
                     <div id="stars"></div>
                 </div>

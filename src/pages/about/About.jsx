@@ -12,6 +12,8 @@ const About = () => {
     console.log("going back");
   }
 
+  
+
   return (
     <div className='p-8 text-left spac-y-4 '>
       <Star />
