@@ -15,7 +15,7 @@ const Home= ()=>{
     const skillsData = {
         'About': {
         title: 'About',
-        description: 'Creo esperienze digitali intuitive e coinvolgenti, focalizzandomi sulla ricerca utente, prototipazione e design system. Ogni progetto nasce dall\'ascolto delle esigenze reali degli utenti.',
+        description: 'I’m a developer who blends design, code, and strategy to create smooth, meaningful digital experiences.',
         icon: '🎨',
         subtitle: 'About Me',
         gradient: 'from-purple-500 to-pink-500',
@@ -25,7 +25,7 @@ const Home= ()=>{
         },
         'ui-ux': {
         title: 'UI/UX DESIGN',
-        description: 'Creo esperienze digitali intuitive e coinvolgenti, focalizzandomi sulla ricerca utente, prototipazione e design system. Ogni progetto nasce dall\'ascolto delle esigenze reali degli utenti.',
+        description: 'I design intuitive, user-centered experiences that balance aesthetics, clarity, and purpose.',
         icon: '🎨',
         subtitle: 'User Experience',
         gradient: 'from-purple-500 to-pink-500',
@@ -34,7 +34,7 @@ const Home= ()=>{
         },
         'frontend': {
         title: 'FRONTEND DEV',
-        description: 'Sviluppo interfacce moderne e responsive utilizzando React, Vue.js e tecnologie all\'avanguardia. Trasformo i design in codice pulito e performante con attenzione ai dettagli.',
+        description: 'I craft responsive, accessible, and visually engaging interfaces that turn ideas into seamless user experiences.',
         icon: '💻',
         subtitle: 'React & Next.js',
         gradient: 'from-pink-500 to-red-500',
@@ -43,7 +43,7 @@ const Home= ()=>{
         },
         'backend': {
         title: 'BACKEND DEV', 
-        description: 'Costruisco API robuste e scalabili con Node.js, gestisco database e creo architetture server-side efficienti. La sicurezza e le performance sono sempre priorità.',
+        description: 'I build fast, secure systems that keep everything running flawlessly.',
         icon: '⚙️',
         subtitle: 'Node.js & APIs',
         gradient: 'from-blue-500 to-cyan-500',
@@ -77,26 +77,22 @@ const Home= ()=>{
 
 
 
-    useGSAP(()=>{
+    /*useGSAP(()=>{
 
       const sections = gsap.utils.toArray('.section');
 
       console.log(sections)
 
-      /*gsap.to(sections, {
-        yPercent: -100 * (sections.length - 1),
-        scrollTrigger: {
-          scrub: 1,
-          trigger: containerReff.current,
-          snap:  { y: 100 },
-          pin: true,
-        }});*/
+    
+
+  
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: "body",
+                trigger: containerReff.current,
                 start: "top top",
                 end: "100% 80%",
                 scrub: 1.2,
+                snap: 1 / (sections - 1)
             }
         })
 
@@ -263,7 +259,100 @@ const Home= ()=>{
       });
 
 
-    })
+    })*/
+     useGSAP(() => {
+    const sections = gsap.utils.toArray('.section');
+    
+    // GSAP ScrollTrigger with snap
+    ScrollTrigger.create({
+      trigger: containerReff.current,
+      start: "top bottom",
+      end: "bottom bottom",
+      snap: {
+        snapTo: 1 / (sections.length - 1), // Snap to each section
+        duration: { min: 0.1, max: 0.4 },  // Snap animation duration
+                                // Delay before snapping
+        ease: "power1.inOut"               // Easing function
+      },
+      scrub: 1,
+      // markers: true, // Uncomment to debug
+    });
+
+    // Hero section animations
+    const heroTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: heroContentRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+      }
+    });
+
+    heroTl
+      .to('.hero-title', { opacity: 0, y: -30, duration: 0.5 }, 0)
+      .to('.hero-description', { opacity: 0, y: -30, duration: 0.5 }, 0.1)
+      .to('.hero-button', { opacity: 0, y: -30, duration: 0.5 }, 0.2);
+
+    // About section entrance
+    gsap.set(aboutContentRef.current, { opacity: 0 });
+    gsap.set('.nav-arrows', { opacity: 0, y: 30 });
+    gsap.set(titleRef.current, { opacity: 0, y: 50, scale: 1.1 });
+    gsap.set('.skill-card', { opacity: 0, y: 100 });
+    gsap.set('.card-indicators', { opacity: 0, y: 20 });
+    gsap.set(descriptionRef.current, { opacity: 0, y: 30 });
+
+    // Animate about section on scroll
+    const aboutTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: aboutContentRef.current,
+        start: "top 80%",
+        end: "top 20%",
+        scrub: 1,
+      }
+    });
+
+    aboutTl
+      .to(aboutContentRef.current, { opacity: 1, duration: 0.3 })
+      .to('.nav-arrows', { opacity: 1, y: 0, duration: 0.3 }, "-=0.2")
+      .to(titleRef.current, { opacity: 1, y: 0, scale: 1, duration: 0.4 }, "-=0.15")
+      .to('.skill-card', { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.5, 
+        stagger: 0.05,
+        ease: "back.out(1.7)"
+      }, "-=0.2")
+      .to('.card-indicators', { opacity: 1, y: 0, duration: 0.3 }, "-=0.3")
+      .to(descriptionRef.current, { opacity: 1, y: 0, duration: 0.3 }, "-=0.2");
+
+        //paralax
+    gsap.to(backgroundRef.current, {
+      y: -100,
+      scale: 1.05,
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1.5
+      }
+    });
+
+     gsap.to(robotRef.current, {
+      y: 250,
+      x: -30,
+      rotation: 3,
+      scale: 0.95,
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "bottom bottom",
+        end: "middle middle",
+        scrub: 2,
+      }
+    });
+
+  }, { scope: containerRef });
 
     //not rview
 
@@ -393,8 +482,8 @@ console.log(skills[currentSkillIndex][1].title)
 
 
     return(
-        <div ref={containerReff} className='home-container '>
-            <div ref={heroContentRef} className='section w-full   h-[100vh] px-[32px ] md:px-[64px] '>
+        <div ref={containerReff} className='home-container ' style={{ scrollBehavior: 'smooth' }}>
+            <div ref={heroContentRef} className='section w-full sna-start sna-always    h-[100vh] px-[32px ] md:px-[64px] '>
                 <div className='text-center m-auto   '>
                 <div className="h-"></div> 
                 <h1 className="hero-title font-Space text-[#fff] m-[16px] md:text-[20px] text-[16px] m-0 p-0" duration={100 } startOnView={true} delay={0.5}>Hi, My name is Adeolpo Joseph and i am a</h1>
@@ -452,7 +541,7 @@ console.log(skills[currentSkillIndex][1].title)
             </div>
 
 
-            <div ref={aboutContentRef}className="BACK h-[100vh] w-full section  md:px-[80px] px-[32px] bg-gradient-to-b from-black/40 to-black/80 relative md:py-[32px] py-[16px] ">
+            <div ref={aboutContentRef}className="BACK h-[100vh] w-full section sna-start sna-always   md:px-[80px] px-[32px] bg-gradient-to-b from-black/40 to-black/80 relative md:py-[32px] py-[16px] ">
                 <div className="nav-arrows flex gap-3 mb-4">
                     <button 
                     onClick={() => navigateSkills(-1)}
@@ -572,7 +661,7 @@ console.log(skills[currentSkillIndex][1].title)
   <li class="icon-content">
     <a href="https://x.com/v_veratti" aria-label="GitHub" data-social="github">
       <div class="filled"></div>
-      <i class="fa-brands fa-x-twitter example-2 bi bi-github z-10 text-[24px] "></i>
+      <i class="fa-brands fa-x-twitter example-2 bi bi-github z-10 md:text-[24px] text-[20px]"></i>
     </a>
     <div class="tooltip">X</div>
   </li>
@@ -583,7 +672,7 @@ console.log(skills[currentSkillIndex][1].title)
       data-social="instagram"
     >
       <div class="filled"></div>
-       <i className="fa-solid fa-envelope bi bi-instagram z-10 text-[24px] "></i>
+       <i className="fa-solid fa-envelope bi bi-instagram z-10  md:text-[24px] text-[20px] "></i>
     </a>
     <div class="tooltip">Gmail</div>
   </li>

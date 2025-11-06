@@ -102,12 +102,12 @@ const Dynamic = () => {
         console.log(heights);
     }, []);
 
-const navigate = useNavigate();
-  const goBack = () => {
-    navigate(-1);
-    console.log("going back");
-  }
-
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1);
+        console.log("going back");
+    }
+    
 
   return (
     <div className='p-8 text-left space-y-4  '>
