@@ -181,7 +181,7 @@ strong {
 
 /* From Uiverse.io by StealthWorm - Edited for Futuristic Gradient */
 
-.btn {
+/*.btn {
     text-align: center;
   display: flex;
   justify-content: center;
@@ -199,11 +199,11 @@ strong {
   background-image: linear-gradient(#0f0c29, #0f0c29),
     linear-gradient(
       137.48deg,
-      #31E1F7 10%,   /* neon cyan (main color) */
-      #3A86FF 35%,   /* bright space blue */
-      #9D4EDD 60%,   /* deep cosmic purple */
-      #FF1B6B 80%,   /* neon magenta */
-      #FEE440 95%    /* cosmic yellow */
+      #31E1F7 10%,   /* neon cyan (main color) 
+      #3A86FF 35%,   /* bright space blue 
+      #9D4EDD 60%,   /* deep cosmic purple 
+      #FF1B6B 80%,   /* neon magenta 
+      #FEE440 95%    /* cosmic yellow/
     );
   background-origin: border-box;
   background-clip: content-box, border-box;
@@ -245,11 +245,11 @@ strong {
 }
 
 .circle:nth-of-type(1) {
-  background: #31E1F7aa; /* glowing cyan */
+  background: #31E1F7aa; /* glowing cyan 
 }
 
 .circle:nth-of-type(2) {
-  background: #9D4EDDb4; /* glowing purple */
+  background: #9D4EDDb4; /* glowing purple 
 }
 
 .btn:hover #container-stars {
@@ -498,3 +498,61 @@ ul {
   scroll-snap-stop: always;
   height: 100vh;
 }*/
+
+
+
+
+
+
+.Btn-Container {
+  display: flex;
+  width: 220px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0px 5px 10px #bebebe;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  margin: auto;
+}
+.icon-Container {
+  width: 60px;
+  height: 60px;
+  background-color: #31e1f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+.text {
+  width: calc(220px - 45px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 1.1em;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+  text-align: center;
+}
+.icon-Container svg {
+  transition-duration: 1.5s;
+}
+.Btn-Container:hover .icon-Container svg {
+  transition-duration: 1.5s;
+  animation: arrow 1s linear infinite;
+}
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    margin-left: 0px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 10px;
+  }
+}

@@ -1,6 +1,21 @@
 import React from 'react'
 import me from '../../assets/about/Me.jpg'
 import './about.css'
+import { IconCloud } from "@/components/ui/icon-cloud"
+import css from  '../../assets/skill-icons-main/icons/CSS.svg'
+import html from  '../../assets/skill-icons-main/icons/HTML.svg'
+import js from  '../../assets/skill-icons-main/icons/JavaScript.svg'
+import reactt from  '../../assets/skill-icons-main/icons/React-Light.svg'
+import tailwind from  '../../assets/skill-icons-main/icons/TailwindCSS-Light.svg'
+import figma from  '../../assets/skill-icons-main/icons/Figma-Light.svg'
+import firebase from  '../../assets/skill-icons-main/icons/Firebase-Light.svg'
+import github from  '../../assets/skill-icons-main/icons/Github-Light.svg'
+import nodejs from  '../../assets/skill-icons-main/icons/NodeJS-Light.svg'
+import redux from  '../../assets/skill-icons-main/icons/Redux.svg'
+import typescript from  '../../assets/skill-icons-main/icons/TypeScript.svg'
+import next from  '../../assets/skill-icons-main/icons/NextJS-Light.svg'
+
+
 
 import Star from '../../component/background/Star'
 import { useNavigate } from 'react-router-dom'
@@ -11,6 +26,58 @@ const About = () => {
     navigate(-1);
     console.log("going back");
   }
+
+  const images = [
+    {
+      src: css,
+      alt: 'CSS3 Logo',
+
+    },
+    {
+      src: html,
+      alt: 'HTML5 Logo',
+    },
+    {
+      src: js,
+      alt: 'JavaScript Logo',
+    },
+    {
+      src: reactt,
+      alt: 'React Logo',
+    },
+    {
+      src: tailwind,
+      alt: 'Tailwind CSS Logo',
+    },
+    {
+      src: figma,
+      alt: 'Figma Logo',
+    },
+    {
+      src: firebase,
+      alt: 'Firebase Logo',
+    },
+    {
+      src: github,
+      alt: 'GitHub Logo',
+    },
+    {
+      src: nodejs,
+      alt: 'Node.js Logo',
+    },
+    {
+      src: redux,
+      alt: 'Redux Logo',
+    },
+    {
+      src: typescript,
+      alt: 'TypeScript Logo',
+    },
+    {
+      src: next,
+      alt: 'Next.js Logo',
+    },
+  ];
 
   
 
@@ -39,11 +106,17 @@ const About = () => {
       </div>
 
       <div className=' w-full h-[100vh]  '>
+      
         
-        
-        
-        <h2 className='text-4xl font-bold'>What we do</h2>
+        <h2 className='text-4xl font-bold'>My Ecosystem</h2>
+
+        <div className=" border-none relative flex size-full ma-w-lg items-center justify-center overflow-hidden rounded-lg border w-full h-[300px] mt-10 p-10 m-auto ">
+          <IconCloud images={images.map(image => image.src)}  />
+         </div>
+
+         
       </div>
+        
     </div>
   )
 }
