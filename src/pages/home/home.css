@@ -507,7 +507,7 @@ ul {
 .Btn-Container {
   display: flex;
   width: 220px;
-  height: 60px;
+  height: 56px;
   background-color: #fff;
   border-radius: 40px;
   box-shadow: 0px 5px 10px #bebebe;
@@ -518,8 +518,8 @@ ul {
   margin: auto;
 }
 .icon-Container {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   background-color: #31e1f7;
   display: flex;
   align-items: center;
