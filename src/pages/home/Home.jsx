@@ -68,6 +68,11 @@ const Home= ()=>{
     const {robotRef,backgroundRef,link,setLink} = useContext(MyContext)
     const titleRef = useRef(null);
     const descriptionRef = useRef(null);
+    const heroTitleRef = useRef(null);
+    const heroDescriptionRef = useRef(null);
+    const heroButtonRef = useRef(null);
+    const heroDescriptionReff = useRef(null);
+    const heroButtonReff = useRef(null);
     const cardsRef = useRef(null);
     const gsapRef = useRef(null);
     const ScrollTriggerRef = useRef(null)
@@ -282,16 +287,21 @@ const Home= ()=>{
     const heroTl = gsap.timeline({
       scrollTrigger: {
         trigger: heroContentRef.current,
-        start: "top top",
-        end: "bottom top",
+        start: "top 30%",
+        end: "bottom bottom",
+        //start: "top 80%",
+        //end: "top 20%",
         scrub: 1,
+        markers: false,
       }
     });
 
     heroTl
-      .to('.hero-title', { opacity: 0, y: -30, duration: 0.5 }, 0)
-      .to('.hero-description', { opacity: 0, y: -30, duration: 0.5 }, 0.1)
-      .to('.hero-button', { opacity: 0, y: -30, duration: 0.5 }, 0.2);
+      .to(heroTitleRef.current, { opacity: 0, y: -30, duration: 0.5 }, 0.2)
+      .to(heroDescriptionRef.current, { opacity: 0, y: -30, duration: 0.5 }, 0.3)
+      .to(heroDescriptionReff.current, { opacity: 0, y: -30, duration: 0.5 }, 0.3)
+      .to(heroButtonRef.current, { opacity: 0, y: -30, duration: 0.5 }, 0.4)
+      .to(heroButtonReff.current, { opacity: 0, y: -30, duration: 0.5 }, 0.5);
 
     // About section entrance
     gsap.set(aboutContentRef.current, { opacity: 0 });
@@ -305,16 +315,17 @@ const Home= ()=>{
     const aboutTl = gsap.timeline({
       scrollTrigger: {
         trigger: aboutContentRef.current,
-        start: "top 80%",
-        end: "top 20%",
+        start: "top 100%",
+        end: "top 10%",
         scrub: 1,
+        markers: true,
       }
     });
 
     aboutTl
-      .to(aboutContentRef.current, { opacity: 1, duration: 0.3 })
-      .to('.nav-arrows', { opacity: 1, y: 0, duration: 0.3 }, "-=0.2")
-      .to(titleRef.current, { opacity: 1, y: 0, scale: 1, duration: 0.4 }, "-=0.15")
+      .to(aboutContentRef.current, { opacity: 1, duration: 0.5 })
+      .to('.nav-arrows', { opacity: 1, y: 0, duration: 0.4 }, "-=0.2")
+      .to(titleRef.current, { opacity: 1, y: 0, scale: 1, duration: 0.4}, "-=0.15")
       .to('.skill-card', { 
         opacity: 1, 
         y: 0, 
@@ -322,8 +333,8 @@ const Home= ()=>{
         stagger: 0.05,
         ease: "back.out(1.7)"
       }, "-=0.2")
-      .to('.card-indicators', { opacity: 1, y: 0, duration: 0.3 }, "-=0.3")
-      .to(descriptionRef.current, { opacity: 1, y: 0, duration: 0.3 }, "-=0.2");
+      .to('.card-indicators', { opacity: 1, y: 0, duration: 0.4 }, "-=0.3")
+      .to(descriptionRef.current, { opacity: 1, y: 0, duration: 0.4 }, "-=0.2");
 
         //paralax
     gsap.to(backgroundRef.current, {
@@ -483,12 +494,12 @@ console.log(skills[currentSkillIndex][1].title)
 
     return(
         <div ref={containerReff} className='home-container  ' style={{ scrollBehavior: 'smooth' }}>
-            <div ref={heroContentRef} className='section w-full sna-start sna-always   h-[100vh] px-[24px] md:px-[64px] '>
+            <div ref={heroContentRef} className='section w-full sna-start sna-always  h-[100vh] px-[24px] md:px-[64px] '>
                 <div className='text-center m-auto   '>
                 <div className="h-"></div> 
-                <h1 className="hero-title font-Space text-[#fff] -[16px] md:text-[20px] text-[16px] m-0 p-0 mb-8 block text-lg font-medium" >Hi, My name is Adeolpo Joseph</h1>
-                <p className='hero-description md:tex-[94px] h- tex-[36px] font-bold text-[#fff]  m-0 p-0 mb-2 text-4xl font-medium tracking-tight sm:text-6xl lg:text-8xl '>Frontend Developer</p>
-                <svg width="" height='' className='hero-descriptions h-[36px] w-full md:w-[900px] md:h-[94px] text-[100px] m-auto mb-8 -[32px]  ' viewBox="0 0 510 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <h1 ref={heroTitleRef} className="hero-title font-Space text-[#fff] -[16px] md:text-[20px] text-[16px] m-0 p-0 mb-8 block text-lg font-medium" >Hi, My name is Adeolpo Joseph</h1>
+                <p ref={heroDescriptionReff} className='hero-description md:tex-[94px] h- tex-[36px] font-bold text-[#fff]  m-0 p-0 mb-2 text-4xl font-medium tracking-tight sm:text-6xl lg:text-8xl '>Frontend Developer</p>
+                <svg ref={heroDescriptionRef} width="" height='' className='hero-descriptions h-[36px] w-full md:w-[900px] md:h-[94px] text-[100px] m-auto mb-8 -[32px]  ' viewBox="0 0 510 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="hero-descriptions url(#clip0_3160_3041)">
                     <path className='hero-descriptions stroke-2 stroke-[#31E1F7] fill-transparent md:text-[64px] text-[32px] -[100px]  ' d="M14.04 46.0031C11.3947 46.0031 9.06933 45.5338 7.06399 44.5951C5.10133 43.6138 3.56533 42.2271 2.45599 40.4351C1.34666 38.6004 0.791992 36.4244 0.791992 33.9071C0.791992 32.0724 1.11199 30.4724 1.75199 29.1071C2.43466 27.7418 3.35199 26.6111 4.50399 25.7151C5.65599 24.8191 6.93599 24.1578 8.34399 23.7311V22.8351C6.21066 22.1951 4.46133 21.0858 3.09599 19.5071C1.73066 17.9284 1.04799 15.8378 1.04799 13.2351C1.04799 10.6324 1.62399 8.43512 2.77599 6.64312C3.92799 4.85112 5.48533 3.50713 7.44799 2.61112C9.45333 1.67246 11.736 1.20312 14.296 1.20312H21.272V7.85913H15.768C13.848 7.85913 12.248 8.37112 10.968 9.39512C9.73066 10.4191 9.11199 11.9338 9.11199 13.9391C9.11199 15.3471 9.41066 16.4991 10.008 17.3951C10.648 18.2911 11.4587 18.9524 12.44 19.3791C13.464 19.8058 14.5733 20.0191 15.768 20.0191H21.976V14.2591H30.04V20.0191H35.928V26.6751H30.04V46.0031H14.04ZM15.512 39.3471H21.976V26.6751H15.512C13.6347 26.6751 12.056 27.2084 10.776 28.2751C9.49599 29.3418 8.85599 30.9204 8.85599 33.0111C8.85599 35.1444 9.51733 36.7444 10.84 37.8111C12.2053 38.8351 13.7627 39.3471 15.512 39.3471Z" fill="white"/>
                     <path className='hero-descriptions stroke-2 stroke-[#31E1F7] fill-transparent md:text-[64px] text-[32px] ' d="M74.5663 46.8991C70.897 46.8991 67.7396 46.2378 65.0943 44.9151C62.4916 43.5498 60.4863 41.6298 59.0783 39.1551C57.713 36.6378 57.0303 33.6724 57.0303 30.2591V1.20312H65.4783V30.5151C65.4783 33.2458 66.2463 35.4004 67.7823 36.9791C69.361 38.5578 71.6223 39.3471 74.5663 39.3471C77.5103 39.3471 79.7503 38.5578 81.2863 36.9791C82.865 35.4004 83.6543 33.2458 83.6543 30.5151V1.20312H92.1023V30.2591C92.1023 33.6724 91.3983 36.6378 89.9903 39.1551C88.625 41.6298 86.6196 43.5498 83.9743 44.9151C81.3716 46.2378 78.2356 46.8991 74.5663 46.8991Z" fill="white"/>
@@ -518,7 +529,7 @@ console.log(skills[currentSkillIndex][1].title)
                 
 
                 
-                <button class="Btn-Container ">
+                <button ref={heroButtonRef} class="Btn-Container ">
                   <span class="text">Contact Me</span>
                   <span class="icon-Container">
                     <svg
@@ -550,9 +561,10 @@ console.log(skills[currentSkillIndex][1].title)
 
 
 
-              <div class="absolute md:bottom-[32px] bottom-[16px] left-1/2 transform -translate-x-1/2">
+              <div ref={heroButtonReff} class="absolute md:bottom-[32px] bottom-[16px] left-1/2 transform -translate-x-1/2">
 
               <button
+              
                 class="cursor-pointer bg-gray-800 px-3 py-2 rounded-md text-white tracking-wider shadow-xl animate-bounce hover:animate-none"
               >
                 <svg
