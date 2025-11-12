@@ -318,7 +318,7 @@ const Home= ()=>{
         start: "top 100%",
         end: "top 10%",
         scrub: 1,
-        markers: true,
+        markers: false,
       }
     });
 
