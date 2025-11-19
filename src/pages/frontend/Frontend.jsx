@@ -115,11 +115,11 @@ const Frontend = () => {
 
         {projects.map((project,index) => (
             console.log(project.imageUrl),
-            <div>
+            <div className="hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group">
             <div
             key={index}
             style={{ backgroundImage: `url(${project.imageUrl})`,height: `${height[index]}px` }}
-            className="relative bg-cover bg-center rounded-lg shadow-md  overflow-hidden p-4 hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+            className="relative bg-cover bg-center rounded-lg shadow-md  overflow-hidden p-4 "
             >
             
                 <h2 className="text-xl font-semibold text-white">

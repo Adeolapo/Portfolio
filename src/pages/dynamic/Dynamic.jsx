@@ -7,6 +7,7 @@ import cover4 from '../../assets/cover/cover4.jpg'
 import cover5 from '../../assets/cover/cover5.png'
 import cover6 from '../../assets/cover/cover6.png'
 import cover7 from '../../assets/cover/cover7.png'
+import booksy from '../../assets/cover/Booksy.png'
 import './dynamic.css'
 import { useNavigate } from 'react-router-dom';
 import Star from '@/component/background/Star';
@@ -37,6 +38,14 @@ const Dynamic = () => {
 
 
     const projects = [
+        {
+            
+            title: "Booksy Case Study",
+            description: "Description for project one.",
+            imageUrl: booksy,
+            view:"www.behance.net/gallery/238577089/Booksy-Case-Study",
+            
+        },
         {
             
             title: "VertAI",
@@ -113,7 +122,7 @@ const Dynamic = () => {
   return (
     <div className='p-8 text-left space-y-4  '>
         <Star />
-        <button onClick={goBack} className='mb-5 cursor-pointer  md:w-12 md:h-12 w-10 h-10 rounded-lg  bg-white  flex items-center justify-center  transition-all transform hover:scale-110 hover:bg-[#31E1F7] sticky top-[20px]'>
+        <button onClick={goBack} className='mb-5 cursor-pointer  md:w-12 md:h-12 w-10 h-10 rounded-lg  bg-white  flex items-center justify-center  transition-all transform hover:scale-110 hover:bg-[#31E1F7] z-50 sticky top-[20px]'>
             <i className="fa-solid fa-angle-left z-10 text-black md:text-[24px] text-[20px] "></i>
         </button>
         
@@ -134,11 +143,11 @@ const Dynamic = () => {
 
         {projects.map((project,index) => (
             console.log(project.imageUrl),
-            <div>
+            <div className="hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group">
             <div
             key={index}
             style={{ backgroundImage: `url(${project.imageUrl})`,height: `${height[index]}px` }}
-            className="relative bg-cover bg-center rounded-lg shadow-md  overflow-hidden p-4 hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+            className="relative bg-cover bg-center rounded-lg shadow-md  overflow-hidden p-4 "
             >
             
                 <h2 className="text-xl font-semibold text-white">

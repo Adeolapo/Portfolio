@@ -31,15 +31,18 @@ const About = () => {
     {
       src: css,
       alt: 'CSS3 Logo',
+      name: 'CSS3',
 
     },
     {
       src: html,
       alt: 'HTML5 Logo',
+      name: 'HTML5',
     },
     {
       src: js,
       alt: 'JavaScript Logo',
+      name: 'JavaScript',
     },
     {
       src: reactt,
@@ -48,30 +51,37 @@ const About = () => {
     {
       src: tailwind,
       alt: 'Tailwind CSS Logo',
+      name: 'Tailwind CSS',
     },
     {
       src: figma,
       alt: 'Figma Logo',
+      name: 'Figma',
     },
     {
       src: firebase,
       alt: 'Firebase Logo',
+      name: 'Firebase',
     },
     {
       src: github,
       alt: 'GitHub Logo',
+      name: 'GitHub',
     },
     {
       src: nodejs,
       alt: 'Node.js Logo',
+      name: 'Node.js',
     },
     {
       src: redux,
       alt: 'Redux Logo',
+      name: 'Redux',
     },
     {
       src: typescript,
       alt: 'TypeScript Logo',
+      name: 'TypeScript',
     },
     {
       src: next,
