@@ -7,6 +7,7 @@ import './App.css'
 import { MyContext } from '../Context'
 import Onboard from './pages/onboard/Onboard'
 import New from './pages/new/New'
+import Contact from './pages/contact/Contact'
 
 
 function App() {
@@ -17,22 +18,27 @@ function App() {
 
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 10000); // ⏱️ splash lasts for 9 seconds
 
     return () => clearTimeout(timer);
-  }, []);
+  }, []);*/
 
   return (
     <div>
   
       <MyContext value={{robotRef,backgroundRef,link,setLink}} >
+      
+      <div>
         
          <Nav />
         
         <Body />
+        
+      </div>
+      
       </MyContext>
   
     </div>

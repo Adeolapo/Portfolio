@@ -295,7 +295,7 @@ const Home= ()=>{
         markers: false,
       }
     });
-
+    gsap.set(heroButtonRef.current, { pointerEvents: "auto" });
     heroTl
       .to(heroTitleRef.current, { opacity: 0, y: -30, duration: 0.5 }, 0.2)
       .to(heroDescriptionRef.current, { opacity: 0, y: -30, duration: 0.5 }, 0.3)
@@ -316,7 +316,7 @@ const Home= ()=>{
       scrollTrigger: {
         trigger: aboutContentRef.current,
         start: "top 100%",
-        end: "top 10%",
+        end: "top top",
         scrub: 1,
         markers: false,
       }
@@ -528,30 +528,31 @@ console.log(skills[currentSkillIndex][1].title)
 
                 
 
-                
-                <button ref={heroButtonRef} class="Btn-Container ">
-                  <span class="text">Contact Me</span>
-                  <span class="icon-Container">
-                    <svg
-                      width="16"
-                      height="19"
-                      viewBox="0 0 16 19"
-                      fill="nones"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle cx="1.61321" cy="1.61321" r="1.5" fill="black"></circle>
-                      <circle cx="5.73583" cy="1.61321" r="1.5" fill="black"></circle>
-                      <circle cx="5.73583" cy="5.5566" r="1.5" fill="black"></circle>
-                      <circle cx="9.85851" cy="5.5566" r="1.5" fill="black"></circle>
-                      <circle cx="9.85851" cy="9.5" r="1.5" fill="black"></circle>
-                      <circle cx="13.9811" cy="9.5" r="1.5" fill="black"></circle>
-                      <circle cx="5.73583" cy="13.4434" r="1.5" fill="black"></circle>
-                      <circle cx="9.85851" cy="13.4434" r="1.5" fill="black"></circle>
-                      <circle cx="1.61321" cy="17.3868" r="1.5" fill="black"></circle>
-                      <circle cx="5.73583" cy="17.3868" r="1.5" fill="black"></circle>
-                    </svg>
-                  </span>
-                </button>
+                <Link to={"/contactMe"}>
+                  <button ref={heroButtonRef} className="Btn-Container ">
+                    <span className="text">Contact Me</span>
+                    <span className="icon-Container">
+                      <svg
+                        width="16"
+                        height="19"
+                        viewBox="0 0 16 19"
+                        fill="nones"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="1.61321" cy="1.61321" r="1.5" fill="black"></circle>
+                        <circle cx="5.73583" cy="1.61321" r="1.5" fill="black"></circle>
+                        <circle cx="5.73583" cy="5.5566" r="1.5" fill="black"></circle>
+                        <circle cx="9.85851" cy="5.5566" r="1.5" fill="black"></circle>
+                        <circle cx="9.85851" cy="9.5" r="1.5" fill="black"></circle>
+                        <circle cx="13.9811" cy="9.5" r="1.5" fill="black"></circle>
+                        <circle cx="5.73583" cy="13.4434" r="1.5" fill="black"></circle>
+                        <circle cx="9.85851" cy="13.4434" r="1.5" fill="black"></circle>
+                        <circle cx="1.61321" cy="17.3868" r="1.5" fill="black"></circle>
+                        <circle cx="5.73583" cy="17.3868" r="1.5" fill="black"></circle>
+                      </svg>
+                    </span>
+                  </button>
+                </Link>
 
 
                
@@ -720,7 +721,7 @@ console.log(skills[currentSkillIndex][1].title)
   <li class="icon-content">
     <a href="https://x.com/v_veratti" aria-label="GitHub" data-social="github">
       <div class="filled"></div>
-      <i class="fa-brands fa-x-twitter example-2 bi bi-github z-10 md:text-[24px] text-[20px]"></i>
+      <i class="fa-brands fa-x-twitter example-2 bi bi-github z-10 md:text-[20px] text-[16px]"></i>
     </a>
     <div class="tooltip">X</div>
   </li>
@@ -731,7 +732,7 @@ console.log(skills[currentSkillIndex][1].title)
       data-social="instagram"
     >
       <div class="filled"></div>
-       <i className="fa-solid fa-envelope bi bi-instagram z-10  md:text-[24px] text-[20px] "></i>
+       <i className="fa-solid fa-envelope bi bi-instagram z-10  md:text-[20px] text-[16px] "></i>
     </a>
     <div class="tooltip">Gmail</div>
   </li>

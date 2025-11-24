@@ -99,16 +99,18 @@ const About = () => {
       </button>
       
       <div className='flex flex-col md:flex-row md:items-start justify-between ga-8 mb-20 '> 
-        <div className='md:w-[55%] w-full mb-10 md:mb-0 md:sticky md:top-20'>
+        <div className='md:w-[55%] w-full mb-10 md:mb-0 md:sticky md:top-20 h-full '>
           <h1 className='text-4xl font-bold mb-10 '>About Me</h1>
           <p className='w-full  '>Hi there 👋🏽<br/>
-            I’m Oluwasemilore Toluwanimi Adeolapo — a Frontend Developer and UI/UX Designer with a deep passion for creating digital experiences that connect with people. I love turning ideas into interactive, visually engaging, and user-friendly products that make a real impact.<br/><br/>
+           Here’s a shorter, more direct version of your intro:
 
-            With a strong background in React.js, Tailwind CSS, and Figma, I specialize in building clean, responsive, and accessible interfaces for both web and mobile platforms. Over the past few years, I’ve designed and developed five fully responsive websites for local businesses, helping them strengthen their online presence and achieve up to 30% higher conversion rates through improved user experience and design clarity.<br/><br/>
+I’m Oluwasemilore Toluwanimi Adeolapo, a Frontend Developer and UI/UX Designer focused on building clean, responsive, and user-centered digital experiences. I work with React.js, Tailwind CSS, and Figma to turn ideas into smooth, visually engaging interfaces for web and mobile.
 
-            My approach blends creativity with logic — I enjoy exploring the “why” behind every design decision and aligning it with a clear user goal. Whether it’s wireframing in Figma, fine-tuning UI interactions, or optimizing front-end performance, I find satisfaction in crafting products that feel smooth, intentional, and enjoyable to use.<br/><br/>
+I’ve designed and developed multiple responsive websites for local businesses, improving their online presence and boosting conversions through clearer design and better usability.
 
-            When I’m not coding or designing, you’ll probably find me learning something new, experimenting with animations, or refining design systems that make teams work faster and smarter.</p>
+I combine creativity with logic — always digging into the “why” behind each design choice. Whether I’m wireframing, refining interactions, or optimizing performance, my goal is to create products that feel intuitive and purposeful.
+
+When I’m not designing or coding, I’m learning new tools, experimenting with animations, or improving design systems.</p>
 
         </div>
       

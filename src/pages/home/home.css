@@ -432,8 +432,8 @@ ul {
 .example-2 .icon-content a svg {
   position: relative;
   z-index: 1;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 .example-2 .icon-content a:hover {
   color: white;
@@ -477,8 +477,8 @@ ul {
     height: 40px;
   }
   .example-2 .icon-content a svg {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 10px;
   }
 }
 
@@ -516,6 +516,8 @@ ul {
   border: none;
   cursor: pointer;
   margin: auto;
+   opacity: 1;
+  transform: translateY(0);
 }
 .icon-Container {
   width: 56px;
