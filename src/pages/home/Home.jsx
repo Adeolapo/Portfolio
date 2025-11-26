@@ -279,7 +279,7 @@ const Home= ()=>{
         delay: 0,       // Delay before snapping
         ease: "power2.inOut"               // Easing function
       },
-      scrub: 1,
+      scrub: 5,
       // markers: true, // Uncomment to debug
     });
 
@@ -291,7 +291,7 @@ const Home= ()=>{
         end: "bottom bottom",
         //start: "top 80%",
         //end: "top 20%",
-        scrub: 1,
+        scrub: 1.5,
         markers: false,
       }
     });
@@ -317,7 +317,7 @@ const Home= ()=>{
         trigger: aboutContentRef.current,
         start: "top 100%",
         end: "top top",
-        scrub: 1,
+        scrub: 1.5,
         markers: false,
       }
     });

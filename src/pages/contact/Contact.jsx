@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 
         return(
             <div className="w-full h-screen flex justify-center flex-col items-center text-white p-8 md:p-0 relative">
-                <button onClick={goBack} className='mb-5 cursor-pointer  md:w-12 md:h-12 w-10 h-10 rounded-lg  bg-white  flex items-center justify-center  transition-all transform hover:scale-110 hover:bg-[#31E1F7] z-50 absolute top-[20px] left-[32px] md:top-[32px] md:left-[80px] '>
+                <button onClick={goBack} className='mb-5 cursor-pointer  md:w-12 md:h-12 w-10 h-10 rounded-lg  bg-white  flex items-center justify-center  transition-all transform hover:scale-110 hover:bg-[#31E1F7] z-50 absolute top-[32px] left-[32px] md:top-[32px] md:left-[80px] '>
                     <i className="fa-solid fa-angle-left z-10 text-black md:text-[24px] text-[20px] "></i>
                 </button>
 
