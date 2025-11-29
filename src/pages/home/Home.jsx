@@ -273,7 +273,7 @@ const Home= ()=>{
       trigger: containerReff.current,
       start: "top bottom",
       end: "bottom bottom",
-      markers: true,
+      markers: false,
       snap: {
         snapTo: 1 / (sections.length - 1), // Snap to each section
         duration: 0.2,  // Snap animation duration
@@ -294,7 +294,7 @@ const Home= ()=>{
         //start: "top 80%",
         //end: "top 20%",
         scrub: 1.5,
-        markers: true,
+        markers: false,
       }
     });
     gsap.set(heroButtonRef.current, { pointerEvents: "auto" });
