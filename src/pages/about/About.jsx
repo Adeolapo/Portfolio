@@ -125,7 +125,7 @@ I combine creativity with logic, always digging into the “why” behind each d
       <div className=' w-full   '>
       
         
-        <h2 className='text-4xl font-bold md:ml-[80px] ml-8'>My Ecosystem</h2>
+        <h2 className='text-4xl font-bold md:ml-[80px] md:ml-8'>My Ecosystem</h2>
 
         <div className=" border-none relative flex size-full ma-w-lg items-center justify-center overflow-hidden rounded-lg border w-full h-[300px] mt-10 p-10 m-auto mb-[100px] ">
           <IconCloud  images={images.map(image => image.src)}  />
