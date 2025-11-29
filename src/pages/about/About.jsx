@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import me from '../../assets/about/Me.jpg'
 import './about.css'
 import { IconCloud } from "@/components/ui/icon-cloud"
@@ -22,6 +22,12 @@ import { useNavigate } from 'react-router-dom'
 
 const About = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   const goBack = () => {
     navigate(-1);
     console.log("going back");
@@ -47,6 +53,7 @@ const About = () => {
     {
       src: reactt,
       alt: 'React Logo',
+      name: 'React',
     },
     {
       src: tailwind,
@@ -86,44 +93,51 @@ const About = () => {
     {
       src: next,
       alt: 'Next.js Logo',
+      name: 'Next.js',
     },
   ];
 
   
 
   return (
-    <div className='p-8 text-left spac-y-4 '>
+    <div className=' md:text-left space-y-4 text-center relative py-8  '>
       <Star />
-      <button onClick={goBack} className='mb-5 cursor-pointer  md:w-12 md:h-12 w-10 h-10 rounded-lg  bg-white  flex items-center justify-center  transition-all transform hover:scale-110 hover:bg-[#31E1F7] sticky top-[20px]'>
+      <button onClick={goBack} className='mb-5 cursor-pointer  md:w-12 md:h-12 w-10 h-10 rounded-lg  bg-white  flex items-center justify-center  transition-all transform hover:scale-110 hover:bg-[#31E1F7] sticky top-[20px]  md:ml-[80px] ml-8'>
         <i className="fa-solid fa-angle-left z-10 text-black md:text-[24px] text-[20px] "></i>
       </button>
       
-      <div className='flex flex-col md:flex-row md:items-start justify-between ga-8 mb-20 '> 
-        <div className='md:w-[55%] w-full mb-10 md:mb-0 md:sticky md:top-20 h-full '>
+      <div className='flex flex-col md:flex-row md:items-start justify-between items-center gap-8 mb-[100px] p-8 md:px-20  w-full pt-[32px]'> 
+        <div className='md:w-[55%] w-full mb-10 md:mb-0 md:top-20 h-full '>
           <h1 className='text-4xl font-bold mb-10 '>About Me</h1>
           <p className='w-full  '>Hi there 👋🏽<br/>
-           Here’s a shorter, more direct version of your intro:
 
-I’m Oluwasemilore Toluwanimi Adeolapo, a Frontend Developer and UI/UX Designer focused on building clean, responsive, and user-centered digital experiences. I work with React.js, Tailwind CSS, and Figma to turn ideas into smooth, visually engaging interfaces for web and mobile.
+I’m Oluwasemilore Toluwanimi Adeolapo, a Frontend Developer and UI/UX Designer focused on building clean, responsive, and user-centered digital experiences.
 
 I’ve designed and developed multiple responsive websites for local businesses, improving their online presence and boosting conversions through clearer design and better usability.
 
-I combine creativity with logic — always digging into the “why” behind each design choice. Whether I’m wireframing, refining interactions, or optimizing performance, my goal is to create products that feel intuitive and purposeful.
-
-When I’m not designing or coding, I’m learning new tools, experimenting with animations, or improving design systems.</p>
+I combine creativity with logic, always digging into the “why” behind each design choice.</p>
 
         </div>
       
-        <img src={me} alt="" className=' md:w-[40%] w-full rounded-2xl' />
+        <img src={me} alt="" className=' md:w-[35%] md:h-[400px] w-full rounded-2xl' />
       </div>
 
-      <div className=' w-full h-[100vh]  '>
+      <div className=' w-full   '>
       
         
-        <h2 className='text-4xl font-bold'>My Ecosystem</h2>
+        <h2 className='text-4xl font-bold md:ml-[80px] ml-8'>My Ecosystem</h2>
 
-        <div className=" border-none relative flex size-full ma-w-lg items-center justify-center overflow-hidden rounded-lg border w-full h-[300px] mt-10 p-10 m-auto ">
-          <IconCloud images={images.map(image => image.src)}  />
+        <div className=" border-none relative flex size-full ma-w-lg items-center justify-center overflow-hidden rounded-lg border w-full h-[300px] mt-10 p-10 m-auto mb-[100px] ">
+          <IconCloud  images={images.map(image => image.src)}  />
+         </div>
+
+         <div className='flex gap-4 items-center justify-center flex-wrap mt-10 '>
+            {images.map((image, index) => (
+              <div key={index} className=' flex gap-2 items-center hover:scale-110 bg-[#333333] p-4 rounded-lg '>
+                <img src={image.src} alt={image.alt} className='md:w-[24px] md:h-[24px] w-[16px] h-[16px] m-auto ' />
+                <p className='md:text-lg text-sm text-[#fcfcfc] '>{image.name}</p>
+              </div>
+            ))}
          </div>
 
          

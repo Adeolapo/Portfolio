@@ -92,7 +92,7 @@ const Frontend = () => {
 
 
   return (
-    <div className='p-8 text-left space-y-4  '>
+    <div className='p-8 text-left space-y-4  py-8  '>
         <Star />
         <button onClick={goBack} className='mb-5 cursor-pointer  md:w-12 md:h-12 w-10 h-10 rounded-lg  bg-white  flex items-center justify-center  transition-all transform hover:scale-110 hover:bg-[#31E1F7] sticky top-[20px]'>
             <i className="fa-solid fa-angle-left z-10 text-black md:text-[24px] text-[20px] "></i>

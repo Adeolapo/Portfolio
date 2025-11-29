@@ -273,11 +273,13 @@ const Home= ()=>{
       trigger: containerReff.current,
       start: "top bottom",
       end: "bottom bottom",
+      markers: true,
       snap: {
         snapTo: 1 / (sections.length - 1), // Snap to each section
-        duration: 0.4,  // Snap animation duration
+        duration: 0.2,  // Snap animation duration
         delay: 0,       // Delay before snapping
-        ease: "power2.inOut"               // Easing function
+        //ease: "power2.inOut"               // Easing function
+        ease: "linear"               // Easing function
       },
       scrub: 5,
       // markers: true, // Uncomment to debug
@@ -287,12 +289,12 @@ const Home= ()=>{
     const heroTl = gsap.timeline({
       scrollTrigger: {
         trigger: heroContentRef.current,
-        start: "top 30%",
+        start: "top top",
         end: "bottom bottom",
         //start: "top 80%",
         //end: "top 20%",
         scrub: 1.5,
-        markers: false,
+        markers: true,
       }
     });
     gsap.set(heroButtonRef.current, { pointerEvents: "auto" });
@@ -317,7 +319,7 @@ const Home= ()=>{
         trigger: aboutContentRef.current,
         start: "top 100%",
         end: "top top",
-        scrub: 1.5,
+        scrub: 1,
         markers: false,
       }
     });
@@ -331,7 +333,8 @@ const Home= ()=>{
         y: 0, 
         duration: 0.5, 
         stagger: 0.05,
-        ease: "back.out(1.7)"
+        //ease: "back.out(1.7)"
+        ease: "linear"
       }, "-=0.2")
       .to('.card-indicators', { opacity: 1, y: 0, duration: 0.4 }, "-=0.3")
       .to(descriptionRef.current, { opacity: 1, y: 0, duration: 0.4 }, "-=0.2");
@@ -345,7 +348,7 @@ const Home= ()=>{
         trigger: containerRef.current,
         start: "top top",
         end: "bottom top",
-        scrub: 1.5
+        scrub: 2
       }
     });
 
@@ -376,7 +379,7 @@ const Home= ()=>{
     // Animate cards sliding
     skillTl.to(cardsRef.current, {
       x: -newIndex * 320,
-      duration: 0.6,
+      duration: 0.3,
       ease: "power2.out"
     }, 0);
 
@@ -494,7 +497,7 @@ console.log(skills[currentSkillIndex][1].title)
 
     return(
         <div ref={containerReff} className='home-container  ' style={{ scrollBehavior: 'smooth' }}>
-            <div ref={heroContentRef} className='section w-full sna-start sna-always  h-[100vh] px-[24px] md:px-[64px] '>
+            <div ref={heroContentRef} className='section w-full sna-start sna-always pt-[204px] md:pt-[88px]  h-[100vh] px-[24px] md:px-[64px] '>
                 <div className='text-center m-auto   '>
                 <div className="h-"></div> 
                 <h1 ref={heroTitleRef} className="hero-title font-Space text-[#fff] -[16px] md:text-[20px] text-[16px] m-0 p-0 mb-8 block text-lg font-medium" >Hi, My name is Adeolpo Joseph</h1>
