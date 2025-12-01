@@ -497,7 +497,7 @@ console.log(skills[currentSkillIndex][1].title)
 
     return(
         <div ref={containerReff} className='home-container  ' style={{ scrollBehavior: 'smooth' }}>
-            <div ref={heroContentRef} className='section w-full sna-start sna-always pt-[204px] md:pt-[88px]  h-[100vh] px-[24px] md:px-[64px] '>
+            <div ref={heroContentRef} className='section w-full sna-start sna-always pt-[170px] md:pt-[88px]  h-[100vh] px-[24px] md:px-[64px] '>
                 <div className='text-center m-auto   '>
                 <div className="h-"></div> 
                 <h1 ref={heroTitleRef} className="hero-title font-Space text-[#fff] -[16px] md:text-[20px] text-[16px] m-0 p-0 mb-8 block text-lg font-medium" >Hi, My name is Adeolpo Joseph</h1>
