@@ -8,6 +8,7 @@ import cover5 from '../../assets/cover/cover5.png'
 import cover6 from '../../assets/cover/cover6.png'
 import cover7 from '../../assets/cover/cover7.png'
 import booksy from '../../assets/cover/Booksy.png'
+import segsy from '../../assets/cover/segsy.png'
 import './dynamic.css'
 import { useNavigate } from 'react-router-dom';
 import Star from '@/component/background/Star';
@@ -44,6 +45,14 @@ const Dynamic = () => {
             description: "Description for project one.",
             imageUrl: booksy,
             view:"www.behance.net/gallery/238577089/Booksy-Case-Study",
+            
+        },
+        {
+            
+            title: "Segsy AI Landing Page",
+            description: "Description for project one.",
+            imageUrl: segsy,
+            view:"www.behance.net/gallery/239188485/Segsy-AI-Landing-page",
             
         },
         {
