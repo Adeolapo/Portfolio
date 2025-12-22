@@ -9,6 +9,7 @@ import cover6 from '../../assets/cover/cover6.png'
 import cover7 from '../../assets/cover/cover7.png'
 import booksy from '../../assets/cover/Booksy.png'
 import segsy from '../../assets/cover/segsy.png'
+import avex from '../../assets/cover/Avex.png'
 import './dynamic.css'
 import { useNavigate } from 'react-router-dom';
 import Star from '@/component/background/Star';
@@ -39,6 +40,14 @@ const Dynamic = () => {
 
 
     const projects = [
+        {
+            
+            title: "Avex Fintech App",
+            description: "Description for project one.",
+            imageUrl: avex,
+            view:"www.behance.net/gallery/240868779/Avex-Fintech-App",
+            
+        },
         {
             
             title: "Booksy Case Study",

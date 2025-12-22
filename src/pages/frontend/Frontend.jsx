@@ -8,6 +8,7 @@ import cover4 from '../../assets/cover/FEcover.png'
 import cover5 from '../../assets/cover/cover5.png'
 import cover6 from '../../assets/cover/cover6.png'
 import cover7 from '../../assets/cover/cover7.png'
+import renoto from '../../assets/cover/renoto.png'
 import './frontend.css'
 import { useNavigate } from 'react-router-dom';
 import Star from '@/component/background/Star';
@@ -45,6 +46,14 @@ const Frontend = () => {
             imageUrl: cover1,
             view:"veratti-chat-app.vercel.app",
             code:"https://github.com/Adeolapo/Chat-APP"
+        },
+        {
+            
+            title: "Renoto App",
+            description: "Description for project one.",
+            imageUrl: renoto,
+            view:"veratti-renoto.vercel.app",
+            code:"https://github.com/Adeolapo/Renoto"
         },
        
         {

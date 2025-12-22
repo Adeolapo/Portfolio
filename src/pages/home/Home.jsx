@@ -82,146 +82,8 @@ const Home= ()=>{
 
 
 
-    /*useGSAP(()=>{
-
-      const sections = gsap.utils.toArray('.section');
-
-      console.log(sections)
-
     
 
-  
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: containerReff.current,
-                start: "top top",
-                end: "100% 80%",
-                scrub: 1.2,
-                snap: 1 / (sections - 1)
-            }
-        })
-
-        tl.to(heroContentRef.current?.querySelector('.hero-title'),{
-            opacity: 0,
-            y: -30,
-            duration: 0.6,
-
-        }, 0.2)
-        .to(heroContentRef.current?.querySelector('.hero-description'), {
-        opacity: 0,
-        y: -30,
-        duration: 0.6
-      }, 0.3)
-        .to(heroContentRef.current?.querySelector('.hero-descriptions'), {
-        opacity: 0,
-        y: -30,
-        duration: 0.6
-      }, 0.4)
-      .to(heroContentRef.current?.querySelector('.hero-buttons'), {
-        opacity: 0,
-        y: -30,
-        duration: 0.6
-      }, 0.5)
-      //about section
-       .to(aboutContentRef.current, {
-      opacity: 1,
-      duration: 0.8,
-      ease: "power2.out",
-      
-    }, 0.5)
-    .fromTo(".BACK", {
-      opacity: 0,
-    }, {
-      opacity: 1,
-      duration: 0.7,
-      ease: "power2.out"
-    }, 0.7)
-    .fromTo(".nav-arrows", {
-      opacity: 0,
-      y: 30
-    }, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "power2.out"
-    }, 0.6)
-    .fromTo(titleRef.current, {
-      opacity: 0,
-      y: 50,
-      scale: 1.1
-    }, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 0.8,
-      ease: "power2.out"
-    }, 0.7)
-    .fromTo(".skill-card", {
-      opacity: 0,
-      y: 100,
-      rotation: (i) => (i - 1.5) * 10
-    }, {
-      opacity: 1,
-      y: 0,
-      rotation: 0,
-      duration: 1,
-      ease: "back.out(1.7)",
-      stagger: 0.1
-    }, 0.8)
-    .fromTo(".card-indicators", {
-      opacity: 0,
-      y: 20
-    }, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "power2.out"
-    }, 1)
-    .fromTo(descriptionRef.current, {
-      opacity: 0,
-      y: 30
-    }, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "power2.out"
-    }, 1.1)
-    .fromTo(".about-buttons", {
-      opacity: 0,
-      y: 30
-    }, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "power2.out"
-    }, 1.2);
-
-    //paralax
-    gsap.to(backgroundRef.current, {
-      y: -100,
-      scale: 1.05,
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1.5
-      }
-    });
-
-     gsap.to(robotRef.current, {
-      y: 250,
-      x: -30,
-      rotation: 3,
-      scale: 0.95,
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "bottom bottom",
-        end: "middle middle",
-        scrub: 2,
-      }
-    });
 
 
 
@@ -235,37 +97,8 @@ const Home= ()=>{
 
 
 
-
-
-
-      const cards = cardsRef.current?.children || [];
-      Array.from(cards).forEach((card, index) => {
-        card.addEventListener('mouseenter', () => {
-          if (index !== currentSkillIndex) {
-            gsap.to(card, {
-              scale: 1.02,
-              y: -5,
-              duration: 0.3,
-              ease: "power2.out"
-            });
-          }
-        });
-
-        card.addEventListener('mouseleave', () => {
-          if (index !== currentSkillIndex) {
-            gsap.to(card, {
-              scale: 1,
-              y: 0,
-              duration: 0.3,
-              ease: "power2.out"
-            });
-          }
-        });
-      });
-
-
-    })*/
-     useGSAP(() => {
+     
+    useGSAP(() => {
     const sections = gsap.utils.toArray('.section');
     
     // GSAP ScrollTrigger with snap
@@ -276,12 +109,14 @@ const Home= ()=>{
       markers: false,
       snap: {
         snapTo: 1 / (sections.length - 1), // Snap to each section
+       // pin: true,
         duration: 0.2,  // Snap animation duration
         delay: 0,       // Delay before snapping
         //ease: "power2.inOut"               // Easing function
         ease: "linear"               // Easing function
       },
       scrub: 5,
+      
       // markers: true, // Uncomment to debug
     });
 
@@ -321,7 +156,9 @@ const Home= ()=>{
         end: "top top",
         scrub: 1,
         markers: false,
-      }
+        
+      },
+     
     });
 
     aboutTl
@@ -604,7 +441,7 @@ console.log(skills[currentSkillIndex][1].title)
             </div>
 
 
-            <div ref={aboutContentRef}className="BACK h-[100vh] w-full section sna-start sna-always   md:px-[80px] px-[32px] bg-gradient-to-b from-black/40 to-black/80 relative md:py-[32px] py-[16px] ">
+            <div ref={aboutContentRef}className="BACK h-[100vh] w-full section sna-start sna-always  md:px-[80px] px-[32px] bg-gradient-to-b from-black/40 to-black/80 relative md:py-[32px] py-[16px] ">
                 <div className="nav-arrows flex gap-3 mb-4">
                     <button 
                     onClick={() => navigateSkills(-1)}
@@ -622,12 +459,12 @@ console.log(skills[currentSkillIndex][1].title)
                     </button>
                 </div>
 
-                {/* Dynamic Title */}
+              
                 <h1 ref={titleRef} className="text-4xl md:text-6xl font-bold text-left text-white mb-6 leading-tight min-h-[120px]">
                     {skills[currentSkillIndex][1].title}
                 </h1>
                 
-                {/* Cards Container */}
+        
                 <div 
                     className="skill-card relative h-54 mb-6 overflow-x-hidden  cursor-grab"
                     onTouchStart={handleTouchStart}
@@ -665,7 +502,7 @@ console.log(skills[currentSkillIndex][1].title)
                     </div>
                 </div>
 
-                {/* Card Indicators */}
+              
                 <div className="card-indicators flex gap-2 mb-8 justify-center md:justify-start">
                     {skills.map((_, index) => (
                     <button
@@ -680,7 +517,7 @@ console.log(skills[currentSkillIndex][1].title)
                     ))}
                 </div>
           
-                {/* Dynamic Description */}
+                
                 <p ref={descriptionRef} className="text-white text-lg max-w-2xl mb-10 opacity-90 leading-relaxed min-h-[80px] flex items-start text-left">
                     {skills[currentSkillIndex][1].description}
                 </p>
@@ -694,7 +531,7 @@ console.log(skills[currentSkillIndex][1].title)
                 </div>
 
 
-                {/* Social Media Icons */}
+                
 
   <ul className="example-2 absolute md:bottom-[32px] right-[32px] md:right-[80px] bottom-[16px]">
   <li class="icon-content">
