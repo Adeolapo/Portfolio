@@ -10,6 +10,7 @@ import cover7 from '../../assets/cover/cover7.png'
 import booksy from '../../assets/cover/Booksy.png'
 import segsy from '../../assets/cover/segsy.png'
 import avex from '../../assets/cover/Avex.png'
+import befit from '../../assets/cover/BeFit.png'
 import './dynamic.css'
 import { useNavigate } from 'react-router-dom';
 import Star from '@/component/background/Star';
@@ -50,6 +51,14 @@ const Dynamic = () => {
         },
         {
             
+            title: "BeFit Landing Page",
+            description: "Description for project one.",
+            imageUrl: befit,
+            view:"www.behance.net/gallery/241384427/BeFIT-Landing-Page",
+            
+        },
+        {
+            
             title: "Booksy Case Study",
             description: "Description for project one.",
             imageUrl: booksy,
@@ -80,27 +89,13 @@ const Dynamic = () => {
             view:"www.behance.net/gallery/231313655/Verty-NFT-Marketplace",
             
         },
-        {
-            
-            title: "Gym Website Landing Page",
-            description: "Description for project one.",
-            imageUrl: cover3,
-            view:"www.behance.net/gallery/218705745/Gym-website-landing-page",
-        },
+       
         {
             
             title: "Retro Crocs E-commerce",
             description: "Description for project one.",
             imageUrl: cover4,
             view:"www.behance.net/gallery/220992183/Crocs-e-commerce-web-and-mobile-design",
-           
-        },
-        {
-            
-            title: "VertWallet Fintech App",
-            description: "Description for project one.",
-            imageUrl: cover5,
-            view:"www.behance.net/gallery/227132131/VertWallet-Fintech-App",
            
         },
         

@@ -9,6 +9,7 @@ import cover5 from '../../assets/cover/cover5.png'
 import cover6 from '../../assets/cover/cover6.png'
 import cover7 from '../../assets/cover/cover7.png'
 import renoto from '../../assets/cover/renoto.png'
+import avant from '../../assets/cover/avant.png'
 import './frontend.css'
 import { useNavigate } from 'react-router-dom';
 import Star from '@/component/background/Star';
@@ -39,6 +40,14 @@ const Frontend = () => {
 
 
     const projects = [
+        {
+            
+            title: "Avant GBV Website",
+            description: "Description for project one.",
+            imageUrl: avant,
+            view:"veratti-avant-gbv.vercel.app/",
+            code:"https://github.com/Adeolapo/avant_gbv"
+        },
         {
             
             title: "Chat App",
@@ -103,7 +112,7 @@ const Frontend = () => {
   return (
     <div className='p-8 text-left space-y-4  py-8  '>
         <Star />
-        <button onClick={goBack} className='mb-5 cursor-pointer  md:w-12 md:h-12 w-10 h-10 rounded-lg  bg-white  flex items-center justify-center  transition-all transform hover:scale-110 hover:bg-[#31E1F7] sticky top-[20px]'>
+        <button onClick={goBack} className='mb-5 cursor-pointer  md:w-12 md:h-12 w-10 h-10 rounded-lg  bg-white  flex items-center justify-center  transition-all transform hover:scale-110 hover:bg-[#31E1F7] sticky z-80 top-[20px]'>
             <i className="fa-solid fa-angle-left z-10 text-black md:text-[24px] text-[20px] "></i>
         </button>
         
